@@ -14,26 +14,36 @@ def shortest_word(s):
 shortest_word_string="I don't think that word means what you think it means"
 print(f'shortest_word solution: \n > {shortest_word(shortest_word_string)} = 1')
 
-#Challenge: 22-shortest_word
+#Challenge: 22-reverse_a_string
 #Difficulty:  Intermediate
 #Prompt:
-#- Write a function called sum_of_minimums that accepts a single list as an argument.
-#- Given a 2D list of size m * n, your task is to find the sum of the minimum value in each row.
-#- You will always be given non-empty lists containing positive values.
+#- Reverse a string manually. Don't use s[::-1] (even though that's awesome). Create a new variable storing an empty string and add the letters from the first string one by one. The for loop should iterate over the length of the string and you should access letters individually.
 
-# Your solution for 22-sum_of_minimums here:
+#Hint:
+## Python offers several ways to reverse a String. This is a classic thing that lots of people want to do. It's probably easy to look up this answer on Stack Overflow.
 
-def sum_of_minimums(list):
-    pass
-
-my_list = [ [1,2,3,4,5], [5,6,7,8,9], [20,21,34,56,100] ]
-print(f'sum_of_minimums solution: \n > {sum_of_minimums(my_list)} = 26')
+# Your solution for 22-reverse_a_string here:
 
 def reverse_a_string(s):
     pass
     
 backwards_string="snaem ti kniht uoy tahw snaem drow taht kniht t'nod I"
 print(f'reverse_a_string solution: \n > {reverse_a_string(backwards_string)} = {shortest_word_string}')
+
+#Challenge: 23-shortest_word
+#Difficulty:  Intermediate
+#Prompt:
+#- Write a function called sum_of_minimums that accepts a single list as an argument.
+#- Given a 2D list of size m * n, your task is to find the sum of the minimum value in each row.
+#- You will always be given non-empty lists containing positive values.
+
+# Your solution for 23-sum_of_minimums here:
+
+def sum_of_minimums(list):
+    pass
+
+my_list = [ [1,2,3,4,5], [5,6,7,8,9], [20,21,34,56,100] ]
+print(f'sum_of_minimums solution: \n > {sum_of_minimums(my_list)} = 26')
 
 #Challenge: 24-palindrome_number
 #Difficulty:  Basic
