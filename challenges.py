@@ -9,10 +9,16 @@
 # Your solution for 21-shortest_word here:
 
 def shortest_word(s): 
-    pass
+    words = s.split()
+    minLength = len(words[0])
+
+    for word in words:
+        if minLength > len(word):
+            minLength = len(word)
+    return minLength
 
 shortest_word_string="I don't think that word means what you think it means"
-print(f'shortest_word solution: \n > {shortest_word(shortest_word_string)} = 1')
+print(f'shortest_word solution: \n > {shortest_word(shortest_word_string)}')
 
 #Challenge: 22-reverse_a_string
 #Difficulty:  Intermediate
