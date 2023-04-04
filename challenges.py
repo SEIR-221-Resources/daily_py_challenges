@@ -8,17 +8,17 @@
 
 # Your solution for 21-shortest_word here:
 
-def shortest_word(s): 
-    words = s.split()
-    minLength = len(words[0])
+# def shortest_word(s): 
+#     words = s.split()
+#     minLength = len(words[0])
 
-    for word in words:
-        if minLength > len(word):
-            minLength = len(word)
-    return minLength
+#     for word in words:
+#         if minLength > len(word):
+#             minLength = len(word)
+#     return minLength
 
-shortest_word_string="I don't think that word means what you think it means"
-print(f'shortest_word solution: \n > {shortest_word(shortest_word_string)}')
+# shortest_word_string="I don't think that word means what you think it means"
+# print(f'shortest_word solution: \n > {shortest_word(shortest_word_string)}')
 
 #Challenge: 22-reverse_a_string
 #Difficulty:  Intermediate
@@ -31,10 +31,21 @@ print(f'shortest_word solution: \n > {shortest_word(shortest_word_string)}')
 # Your solution for 22-reverse_a_string here:
 
 def reverse_a_string(s):
-    pass
+    words = s.split()
+    pos = len(words)-1
+    words.reverse()
+    revString = ""
+    for word in words:
+       letters = []
+       for letter in word:
+           letters.append(letter)
     
+       letters.reverse()
+       revString += "".join(letters) + " "
+    
+    return revString
 backwards_string="snaem ti kniht uoy tahw snaem drow taht kniht t'nod I"
-print(f'reverse_a_string solution: \n > {reverse_a_string(backwards_string)} = {shortest_word_string}')
+print(f'reverse_a_string solution: \n > {reverse_a_string(backwards_string)}')
 
 #Challenge: 23-shortest_word
 #Difficulty:  Intermediate
