@@ -8,8 +8,10 @@
 
 # Your solution for 21-shortest_word here:
 
+
 def shortest_word(s): 
-    pass
+    msg = s.split()
+    print(msg)
 
 shortest_word_string="I don't think that word means what you think it means"
 print(f'shortest_word solution: \n > {shortest_word(shortest_word_string)} = 1')
