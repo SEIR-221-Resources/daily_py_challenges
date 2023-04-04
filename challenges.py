@@ -72,9 +72,24 @@ print(f'sum_of_minimums solution: \n > {sum_of_minimums(my_list)}')
 # Your solution for 24-palindrome_number:
 
 def is_palindrome(x):
-   pass
+   strng = str(x)
+   strngArr = []
+   for c in strng:
+       strngArr.append(c)
+   start = 0
+   end = len(strngArr)-1
+   isPalindrome = False
+   while(start < len(strngArr) and end >= 0):
+       if strngArr[start] == strngArr[end]:
+           isPalindrome = True
+       else:
+           isPalindrome = False
+           break
+       start += 1
+       end -= 1
+   return isPalindrome
 
-print(f'is_palindrome solution: \n > {is_palindrome(101)} = True \n > {is_palindrome(10)} = False')
+print(f'is_palindrome solution: \n > {is_palindrome(101)} \n > {is_palindrome(10)} ')
 
 #Challenge: 25-fizz_buzz
 #Difficulty:  Basic
@@ -93,11 +108,22 @@ print(f'is_palindrome solution: \n > {is_palindrome(101)} = True \n > {is_palind
 # Your solution for 25-fizz_buzz:
 
 def fizz_buzz(n):
-    pass
+    output = []
+    for num in range(n+1):
+        if num == 0:
+            pass
+        elif num % 3 == 0 and num % 5 != 0:
+            output.append('Fizz')
+        elif num % 3 != 0 and num % 5 == 0:
+            output.append('Buzz')
+        elif num % 3 == 0 and num % 5 == 0:
+            output.append('FizzBuzz')
+        else: output.append(str(num))
+    return output
 
 n=15
 fizz_buzz_res=['1', '2', 'Fizz', '4', 'Buzz', 'Fizz', '7', '8', 'Fizz', 'Buzz', '11', 'Fizz', '13', '14', 'FizzBuzz']
-print(f'fizz_buzz solution: \n > {fizz_buzz(n)} \n > = \n > {fizz_buzz_res}')
+print(f'fizz_buzz solution: \n > {fizz_buzz(n)} ')
 
 #Challenge: 26-alphabetical
 #Difficulty:  Intermediate
