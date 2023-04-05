@@ -30,8 +30,13 @@ print(f'shortest_word solution: \n > {shortest_word(shortest_word_string)} = 1')
 # Your solution for 22-reverse_a_string here:
 
 def reverse_a_string(s):
-    pass
-    
+    rev_string = ''
+    # JS inspiration: 
+    # for (let i = s.length-1; i >= 0; i--)
+    for i in range(len(s)-1, -1, -1):
+        rev_string += s[i]
+    return rev_string
+
 backwards_string="snaem ti kniht uoy tahw snaem drow taht kniht t'nod I"
 print(f'reverse_a_string solution: \n > {reverse_a_string(backwards_string)} = {shortest_word_string}')
 
