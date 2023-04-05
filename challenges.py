@@ -8,8 +8,16 @@
 
 # Your solution for 21-shortest_word here:
 
-def shortest_word(s): 
-    pass
+def shortest_word(s):
+    words = s.split(" ")
+    word_length = []
+
+    for word in words:
+        word_length.append(len(word))
+    return min(word_length)
+
+
+
 
 shortest_word_string="I don't think that word means what you think it means"
 print(f'shortest_word solution: \n > {shortest_word(shortest_word_string)} = 1')
@@ -25,8 +33,15 @@ print(f'shortest_word solution: \n > {shortest_word(shortest_word_string)} = 1')
 # Your solution for 22-reverse_a_string here:
 
 def reverse_a_string(s):
-    pass
-    
+    s = [*s]
+    s.reverse()
+    output = ""
+    pos = 0
+    for x in s:
+        output += x + (""if pos<len(x)-1 else "")
+        pos+=1
+    print(output)
+
 backwards_string="snaem ti kniht uoy tahw snaem drow taht kniht t'nod I"
 print(f'reverse_a_string solution: \n > {reverse_a_string(backwards_string)} = {shortest_word_string}')
 
@@ -92,12 +107,12 @@ print(f'fizz_buzz solution: \n > {fizz_buzz(n)} \n > = \n > {fizz_buzz_res}')
 #```
 
 #Hint:
-## You'll need to use a couple of built in functions to alphabetize a string. 
+## You'll need to use a couple of built in functions to alphabetize a string.
 # Try to avoid looking up the exact answer and look at built in functions for lists and strings instead.
 
 # Your solution for 26-alphabetical here:
 
-def alphabetical(s): 
+def alphabetical(s):
     pass
 
 word = 'supercalifragilisticexpialicosious'
@@ -119,9 +134,9 @@ print(f'alphabetical solution: \n > {alphabetical(word)} = aaaccceefgiiiiiiilllo
 
 # Your solution for 27-two_sum here:
 
-def two_sum(nums, target): 
+def two_sum(nums, target):
     pass
-                
+
 nums=[2,7,11,15]
 target=9
 print(f'two_sum solution: \n > {two_sum(nums, target)} = [0, 1]')
@@ -147,6 +162,6 @@ print(f'two_sum solution: \n > {two_sum(nums, target)} = [0, 1]')
 
 def roman_to_int(s):
     pass
-		
+
 r='LVIII'
 print(f'roman_to_int solution: \n > {roman_to_int(r)} = 58')
