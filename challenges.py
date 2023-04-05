@@ -17,8 +17,10 @@ def shortest_word(s):
             
     return shorty
 
-# shortest_word_string="I don't think that word means what you think it means"
-# print(f'shortest_word solution: \n > {shortest_word(shortest_word_string)} = 1')
+
+
+shortest_word_string="I don't think that word means what you think it means"
+print(f'shortest_word solution: \n > {shortest_word(shortest_word_string)} = 1')
 
 
 
@@ -36,7 +38,25 @@ def shortest_word(s):
 # Your solution for 22-reverse_a_string here:
 
 def reverse_a_string(s):
-    pass
+    new_list = list(s)
+    new_list.reverse()
+    return ''.join(new_list)
+
+
+# def reverse_a_string(s):
+#     s_len = len(s)
+#     new_list = list(s)
+
+#     def helper(list1):
+#         if len(list1) == 0:
+#             return 
+        
+#         return list1.pop(-1) + helper(list1)
+    
+#     return ''.join(helper(new_list))
+    
+
+
     
 backwards_string="snaem ti kniht uoy tahw snaem drow taht kniht t'nod I"
 print(f'reverse_a_string solution: \n > {reverse_a_string(backwards_string)} = {shortest_word_string}')
