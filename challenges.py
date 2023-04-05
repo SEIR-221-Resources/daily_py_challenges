@@ -37,23 +37,27 @@ print(f'shortest_word solution: \n > {shortest_word(shortest_word_string)} = 1')
 
 # Your solution for 22-reverse_a_string here:
 
+# def reverse_a_string(s):
+#     new_list = list(s)
+#     new_list.reverse()
+#     return ''.join(new_list)
+
+
 def reverse_a_string(s):
     new_list = list(s)
-    new_list.reverse()
-    return ''.join(new_list)
-
-
-# def reverse_a_string(s):
-#     s_len = len(s)
-#     new_list = list(s)
-
-#     def helper(list1):
-#         if len(list1) == 0:
-#             return 
-        
-#         return list1.pop(-1) + helper(list1)
     
-#     return ''.join(helper(new_list))
+
+    def helper(list1):
+        if len(list1) == 0:
+            return ""
+        
+        str1 = ""
+
+        str1 += list1.pop() + helper(list1)
+    
+        return str1
+
+    return helper(new_list)
     
 
 
