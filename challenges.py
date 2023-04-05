@@ -8,7 +8,7 @@
 
 # Your solution for 21-shortest_word here:
 
-def shortest_word(s): 
+def shortest_word(s):
     words = s.split()
     shortest_length = len(words[0])
     position = 0
@@ -35,11 +35,34 @@ print(f'shortest_word solution: \n > {shortest_word(shortest_word_string)} = 1')
 
 # Your solution for 22-reverse_a_string here:
 
-# def reverse_a_string(s):
-#     pass
+def reverse_a_string(s):
+    new_string = ""
+    string_list = list(s)
+    string_list.reverse()
+    for char in string_list:
+        new_string += char
     
-# backwards_string="snaem ti kniht uoy tahw snaem drow taht kniht t'nod I"
-# print(f'reverse_a_string solution: \n > {reverse_a_string(backwards_string)} = {shortest_word_string}')
+    return new_string
+
+print(reverse_a_string("SEI Rocks!"))
+
+# # reverse a string version 2 (Thanks Matthew!)
+# def reverse_a_string(s):
+#     output = ""
+#     index = len(s)-1
+#     while index >= 0:
+#         output += s[index]
+#         index -= 1
+#     return output
+
+
+# print(reverse_a_string("SEI Rocks!"))
+
+# reverse a string version 3 (assigned homework using range)
+
+
+backwards_string="snaem ti kniht uoy tahw snaem drow taht kniht t'nod I"
+print(f'reverse_a_string solution: \n > {reverse_a_string(backwards_string)} = {shortest_word_string}')
 
 #Challenge: 23-shortest_word
 #Difficulty:  Intermediate
