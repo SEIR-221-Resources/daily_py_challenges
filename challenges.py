@@ -94,7 +94,24 @@ print(f'is_palindrome solution: \n > {is_palindrome(101)} = True \n > {is_palind
 # Your solution for 25-fizz_buzz:
 
 def fizz_buzz(n):
-    pass
+    results = []
+    my_range = range(1, n+1)
+    for count in my_range:
+        if (count % 3 == 0 and count % 5 != 0 ):
+           results.append("fizz")
+        elif (count % 5 == 0 and count % 3 != 0 ):
+            results.append("buzz")
+        elif (count % 5 == 0 and count % 3 == 0 ):
+            results.append("fizz buzz")
+        else: results.append(count)
+    return results
+
+
+
+
+
+
+
 
 n=15
 fizz_buzz_res=['1', '2', 'Fizz', '4', 'Buzz', 'Fizz', '7', '8', 'Fizz', 'Buzz', '11', 'Fizz', '13', '14', 'FizzBuzz']
