@@ -32,8 +32,15 @@ print(f'shortest_word solution: \n > {shortest_word(shortest_word_string)} = 1')
 # Your solution for 22-reverse_a_string here:
 
 def reverse_a_string(s):
-    pass
-    
+    output = ''
+    index = len(s)-1
+    while index >= 0:
+        output += s[index]
+        index -= 1
+
+    return output
+
+
 backwards_string="snaem ti kniht uoy tahw snaem drow taht kniht t'nod I"
 print(f'reverse_a_string solution: \n > {reverse_a_string(backwards_string)} = {shortest_word_string}')
 
