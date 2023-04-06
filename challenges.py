@@ -40,7 +40,8 @@ def reverse_a_string(s):
     for x in s:
         output += x + (""if pos<len(x)-1 else "")
         pos+=1
-    print(output)
+    return(output)
+
 
 backwards_string="snaem ti kniht uoy tahw snaem drow taht kniht t'nod I"
 print(f'reverse_a_string solution: \n > {reverse_a_string(backwards_string)} = {shortest_word_string}')
@@ -55,10 +56,14 @@ print(f'reverse_a_string solution: \n > {reverse_a_string(backwards_string)} = {
 # Your solution for 23-sum_of_minimums here:
 
 def sum_of_minimums(list):
-    pass
+    sum = 0
+    for nums in list:
+        sum += min(nums)
+    return (sum)
 
 my_list = [ [1,2,3,4,5], [5,6,7,8,9], [20,21,34,56,100] ]
 print(f'sum_of_minimums solution: \n > {sum_of_minimums(my_list)} = 26')
+print(my_list)
 
 #Challenge: 24-palindrome_number
 #Difficulty:  Basic
