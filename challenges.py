@@ -64,7 +64,7 @@ print(reverse_a_string("SEI Rocks!"))
 backwards_string="snaem ti kniht uoy tahw snaem drow taht kniht t'nod I"
 print(f'reverse_a_string solution: \n > {reverse_a_string(backwards_string)} = {shortest_word_string}')
 
-#Challenge: 23-shortest_word
+#Challenge: 23-sum_of_minimums
 #Difficulty:  Intermediate
 #Prompt:
 #- Write a function called sum_of_minimums that accepts a single list as an argument.
@@ -73,11 +73,31 @@ print(f'reverse_a_string solution: \n > {reverse_a_string(backwards_string)} = {
 
 # Your solution for 23-sum_of_minimums here:
 
-# def sum_of_minimums(list):
-#     pass
+def sum_of_minimums(list):
+    total = 0
+    # iterate over list to find sub lists
+    for num_list in list:
+        # print(num_list)
+        smallest = num_list[0]
+        # print(smallest)
+        for num in num_list:
+            if num < smallest:
+                smallest = num
+                print(smallest)
+        total += smallest
+    print(total)
+    return total
+    # print(total)
+    # iterate over sub lists 
+    # find minimum value of each row
+    # add values
+    # return sum
 
-# my_list = [ [1,2,3,4,5], [5,6,7,8,9], [20,21,34,56,100] ]
-# print(f'sum_of_minimums solution: \n > {sum_of_minimums(my_list)} = 26')
+
+my_list = [ [1,2,3,4,5], [5,6,7,8,9], [20,21,34,56,100] ]
+print(f'sum_of_minimums solution: \n > {sum_of_minimums(my_list)} = 26')
+
+
 
 #Challenge: 24-palindrome_number
 #Difficulty:  Basic
