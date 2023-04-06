@@ -23,8 +23,18 @@ print(f'shortest_word solution: \n > {shortest_word(shortest_word_string)} = 1')
 ## Python offers several ways to reverse a String. This is a classic thing that lots of people want to do. It's probably easy to look up this answer on Stack Overflow.
 
 # Your solution for 22-reverse_a_string here:
+def reverse_a_string(s):
+    new_string = ''
+    
+    string_list = list(s)
+    string_list.reverse()
+    for char in string_list:
+        new_string += char
+
+    return(new_string)
 
 
+print(reverse_a_string('SEI ROCKS'))
 
 #Challenge: 23-shortest_word
 #Difficulty:  Intermediate
