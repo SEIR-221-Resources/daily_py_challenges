@@ -9,7 +9,14 @@
 # Your solution for 21-shortest_word here:
 
 def shortest_word(s): 
-    pass
+    list = s.spilt(' ')
+    nums_list = []
+    print('list:', list)
+    for word in list:
+        nums_list.append(len(word))
+    return min(nums_list)
+    print('nums_list:', nums_list)
+    
 
 shortest_word_string="I don't think that word means what you think it means"
 print(f'shortest_word solution: \n > {shortest_word(shortest_word_string)} = 1')
@@ -25,7 +32,10 @@ print(f'shortest_word solution: \n > {shortest_word(shortest_word_string)} = 1')
 # Your solution for 22-reverse_a_string here:
 
 def reverse_a_string(s):
-    pass
+    new_string = ''
+    for i in range(len()-1, -1, -1):
+        new_string += s[i]
+    return new_string
     
 backwards_string="snaem ti kniht uoy tahw snaem drow taht kniht t'nod I"
 print(f'reverse_a_string solution: \n > {reverse_a_string(backwards_string)} = {shortest_word_string}')
