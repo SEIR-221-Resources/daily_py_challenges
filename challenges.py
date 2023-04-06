@@ -23,12 +23,18 @@ print(f'shortest_word solution: \n > {shortest_word(shortest_word_string)} = 1')
 ## Python offers several ways to reverse a String. This is a classic thing that lots of people want to do. It's probably easy to look up this answer on Stack Overflow.
 
 # Your solution for 22-reverse_a_string here:
-
 def reverse_a_string(s):
-    pass
+    new_string = ''
     
-backwards_string="snaem ti kniht uoy tahw snaem drow taht kniht t'nod I"
-print(f'reverse_a_string solution: \n > {reverse_a_string(backwards_string)} = {shortest_word_string}')
+    string_list = list(s)
+    string_list.reverse()
+    for char in string_list:
+        new_string += char
+
+    return(new_string)
+
+
+print(reverse_a_string('SEI ROCKS'))
 
 #Challenge: 23-shortest_word
 #Difficulty:  Intermediate
@@ -39,11 +45,7 @@ print(f'reverse_a_string solution: \n > {reverse_a_string(backwards_string)} = {
 
 # Your solution for 23-sum_of_minimums here:
 
-def sum_of_minimums(list):
-    pass
 
-my_list = [ [1,2,3,4,5], [5,6,7,8,9], [20,21,34,56,100] ]
-print(f'sum_of_minimums solution: \n > {sum_of_minimums(my_list)} = 26')
 
 #Challenge: 24-palindrome_number
 #Difficulty:  Basic
@@ -52,10 +54,7 @@ print(f'sum_of_minimums solution: \n > {sum_of_minimums(my_list)} = 26')
 
 # Your solution for 24-palindrome_number:
 
-def is_palindrome(x):
-   pass
 
-print(f'is_palindrome solution: \n > {is_palindrome(101)} = True \n > {is_palindrome(10)} = False')
 
 #Challenge: 25-fizz_buzz
 #Difficulty:  Basic
@@ -73,12 +72,7 @@ print(f'is_palindrome solution: \n > {is_palindrome(101)} = True \n > {is_palind
 
 # Your solution for 25-fizz_buzz:
 
-def fizz_buzz(n):
-    pass
 
-n=15
-fizz_buzz_res=['1', '2', 'Fizz', '4', 'Buzz', 'Fizz', '7', '8', 'Fizz', 'Buzz', '11', 'Fizz', '13', '14', 'FizzBuzz']
-print(f'fizz_buzz solution: \n > {fizz_buzz(n)} \n > = \n > {fizz_buzz_res}')
 
 #Challenge: 26-alphabetical
 #Difficulty:  Intermediate
@@ -97,11 +91,7 @@ print(f'fizz_buzz solution: \n > {fizz_buzz(n)} \n > = \n > {fizz_buzz_res}')
 
 # Your solution for 26-alphabetical here:
 
-def alphabetical(s): 
-    pass
 
-word = 'supercalifragilisticexpialicosious'
-print(f'alphabetical solution: \n > {alphabetical(word)} = aaaccceefgiiiiiiillloopprrsssstuux')
 
 #Challenge: 27-two_sum
 #Difficulty:  Intermediate
@@ -119,12 +109,7 @@ print(f'alphabetical solution: \n > {alphabetical(word)} = aaaccceefgiiiiiiilllo
 
 # Your solution for 27-two_sum here:
 
-def two_sum(nums, target): 
-    pass
-                
-nums=[2,7,11,15]
-target=9
-print(f'two_sum solution: \n > {two_sum(nums, target)} = [0, 1]')
+
 
 #Challenge: 28-roman_to_integer
 #Difficulty:  Intermediate
@@ -145,8 +130,3 @@ print(f'two_sum solution: \n > {two_sum(nums, target)} = [0, 1]')
 
 # Your solution for 28-roman_to_integer here:
 
-def roman_to_int(s):
-    pass
-		
-r='LVIII'
-print(f'roman_to_int solution: \n > {roman_to_int(r)} = 58')
