@@ -46,16 +46,10 @@ print(f'shortest_word solution: \n > {shortest_word(shortest_word_string)} = 1')
 def reverse_a_string(s):
     new_list = list(s)
     
-
     def helper(list1):
-        if len(list1) == 0:
-            return ""
+        if len(list1) == 0: return ""
         
-        str1 = ""
-
-        str1 += list1.pop() + helper(list1)
-    
-        return str1
+        return list1.pop() + helper(list1)
 
     return helper(new_list)
     
@@ -74,8 +68,11 @@ print(f'reverse_a_string solution: \n > {reverse_a_string(backwards_string)} = {
 
 # Your solution for 23-sum_of_minimums here:
 
-def sum_of_minimums(list):
-    pass
+def sum_of_minimums(list, total = 0):
+    for i in list:
+        total += min(i)
+
+    return total
 
 my_list = [ [1,2,3,4,5], [5,6,7,8,9], [20,21,34,56,100] ]
 print(f'sum_of_minimums solution: \n > {sum_of_minimums(my_list)} = 26')
