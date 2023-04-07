@@ -32,17 +32,12 @@
 
 def reverse_a_string(s):
     words = s.split()
-    pos = len(words)-1
     words.reverse()
     revString = ""
     for word in words:
-       letters = []
-       for letter in word:
-           letters.append(letter)
-    
+       letters = list(word)
        letters.reverse()
        revString += "".join(letters) + " "
-    
     return revString
 backwards_string="snaem ti kniht uoy tahw snaem drow taht kniht t'nod I"
 print(f'reverse_a_string solution: \n > {reverse_a_string(backwards_string)}')
@@ -143,10 +138,15 @@ print(f'fizz_buzz solution: \n > {fizz_buzz(n)} ')
 # Your solution for 26-alphabetical here:
 
 def alphabetical(s): 
-    pass
+    
+    letters = list(s)
+    letters.sort()
+    output = "".join(letters)
+
+    return output
 
 word = 'supercalifragilisticexpialicosious'
-print(f'alphabetical solution: \n > {alphabetical(word)} = aaaccceefgiiiiiiillloopprrsssstuux')
+print(f'alphabetical solution: \n > {alphabetical(word)}')
 
 #Challenge: 27-two_sum
 #Difficulty:  Intermediate
@@ -165,11 +165,20 @@ print(f'alphabetical solution: \n > {alphabetical(word)} = aaaccceefgiiiiiiilllo
 # Your solution for 27-two_sum here:
 
 def two_sum(nums, target): 
-    pass
-                
+    indices = []
+    
+    for idx, num in enumerate(nums):
+        temp = num
+        for idx1, n in enumerate(nums):
+            if idx != idx1:
+                if (temp+n) == target:
+                    indices.append(idx)
+                    indices.append(idx1)             
+
+    return indices[0:2]       
 nums=[2,7,11,15]
 target=9
-print(f'two_sum solution: \n > {two_sum(nums, target)} = [0, 1]')
+print(f'two_sum solution: \n > {two_sum(nums, target)}')
 
 #Challenge: 28-roman_to_integer
 #Difficulty:  Intermediate
@@ -191,7 +200,15 @@ print(f'two_sum solution: \n > {two_sum(nums, target)} = [0, 1]')
 # Your solution for 28-roman_to_integer here:
 
 def roman_to_int(s):
-    pass
+    roman_numerals = { 'I' : 1, 'V' : 5, 'X' : 10, 'L' : 50, 'C' : 100, 'D' : 500, 'M' : 1000}
+    nums = []
+
+    sList = list(s)
+    for num in sList:
+        nums.append(roman_numerals[num])
+    
+    return sum(nums)
+
 		
 r='LVIII'
-print(f'roman_to_int solution: \n > {roman_to_int(r)} = 58')
+print(f'roman_to_int solution for {r}: \n > {roman_to_int(r)} ')
