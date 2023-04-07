@@ -73,7 +73,10 @@ print(my_list)
 # Your solution for 24-palindrome_number:
 
 def is_palindrome(x):
-   pass
+ 
+   if  str(x)== str(x)[::-1]:
+       return True
+   else: return False
 
 print(f'is_palindrome solution: \n > {is_palindrome(101)} = True \n > {is_palindrome(10)} = False')
 
