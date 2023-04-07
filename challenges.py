@@ -15,7 +15,7 @@ def shortest_word(s):
     pass
 
 shortest_word_string="I don't think that word means what you think it means"
-print(f'shortest_word solution: \n > {shortest_word(shortest_word_string)} = 1')
+# print(f'shortest_word solution: \n > {shortest_word(shortest_word_string)} = 1')
 
 #Challenge: 22-reverse_a_string
 #Difficulty:  Intermediate
@@ -27,8 +27,31 @@ print(f'shortest_word solution: \n > {shortest_word(shortest_word_string)} = 1')
 
 # Your solution for 22-reverse_a_string here:
 
+# def reverse_a_string(s):
+    
+#     new_string = ''
+#     str_list = list(s)
+#     str_list.reverse()
+#     for char in str_list:
+#         new_string += char
+#     print(new_string)
+#     return new_string
+    
+    
+
 def reverse_a_string(s):
-    pass
+    
+    output = ""
+    index = len(s)-1
+    print(index)
+    while index >= 0:
+        output+= s[index]
+        index -= 1
+    return output
+
+
+# print(reverse_a_string('forgotten'))
+# pass
     
 # backwards_string="snaem ti kniht uoy tahw snaem drow taht kniht t'nod I"
 # print(f'reverse_a_string solution: \n > {reverse_a_string(backwards_string)} = {shortest_word_string}')
@@ -41,11 +64,19 @@ def reverse_a_string(s):
 #- You will always be given non-empty lists containing positive values.
 
 # Your solution for 23-sum_of_minimums here:
-
+my_list = [ [1,2,3,4,5], [5,6,7,8,9], [20,21,34,56,100] ]
+total = 0
 def sum_of_minimums(list):
-    pass
+    for num_list in list:
+        smallest = num_list[0]
+        for num in num_list:
+            if num < smallest:
+                smallest = num
+                total += smallest
+                return total
+        
 
-# my_list = [ [1,2,3,4,5], [5,6,7,8,9], [20,21,34,56,100] ]
+print(sum_of_minimums(my_list))
 # print(f'sum_of_minimums solution: \n > {sum_of_minimums(my_list)} = 26')
 
 #Challenge: 24-palindrome_number
