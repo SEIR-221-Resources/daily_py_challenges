@@ -70,7 +70,11 @@ print(f'sum_of_minimums solution: \n > {sum_of_minimums(my_list)} = 26')
 # Your solution for 24-palindrome_number:
 
 def is_palindrome(x):
-   pass
+    x = str(x)
+    x_reversed = ''
+    for i in range(len(x)-1, -1, -1):
+        x_reversed += x[i]
+    return True if x == x_reversed else False
 
 print(f'is_palindrome solution: \n > {is_palindrome(101)} = True \n > {is_palindrome(10)} = False')
 
