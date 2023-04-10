@@ -42,7 +42,7 @@
 # backwards_string="snaem ti kniht uoy tahw snaem drow taht kniht t'nod I"
 # print(f'reverse_a_string solution: \n > {reverse_a_string(backwards_string)} = {shortest_word_string}')
 
-#Challenge: 23-shortest_word
+#Challenge: 23-sum_of_minimums
 #Difficulty:  Intermediate
 #Prompt:
 #- Write a function called sum_of_minimums that accepts a single list as an argument.
@@ -51,14 +51,14 @@
 
 # Your solution for 23-sum_of_minimums here:
 
-def sum_of_minimums(list):
-    sum = 0
-    for nums in list:
-        sum += min(nums)
-    return (sum)
+# def sum_of_minimums(list):
+#     sum = 0
+#     for nums in list:
+#         sum += min(nums)
+#     return (sum)
 
-my_list = [ [1,2,3,4,5], [5,6,7,8,9], [20,21,34,56,100] ]
-print(f'sum_of_minimums solution: \n > {sum_of_minimums(my_list)} = 26')
+# my_list = [ [1,2,3,4,5], [5,6,7,8,9], [20,21,34,56,100] ]
+# print(f'sum_of_minimums solution: \n > {sum_of_minimums(my_list)} = 26')
 
 #Challenge: 24-palindrome_number
 #Difficulty:  Basic
@@ -67,10 +67,14 @@ print(f'sum_of_minimums solution: \n > {sum_of_minimums(my_list)} = 26')
 
 # Your solution for 24-palindrome_number:
 
-# def is_palindrome(x):
-#    pass
+def is_palindrome(num):
+    reverse_num = str(num)[::-1]
+    if str(num) == reverse_num:
+        return True
+    else:
+        return False
 
-# print(f'is_palindrome solution: \n > {is_palindrome(101)} = True \n > {is_palindrome(10)} = False')
+print(f'is_palindrome solution: \n > {is_palindrome(101)} = True \n > {is_palindrome(10)} = False')
 
 #Challenge: 25-fizz_buzz
 #Difficulty:  Basic
