@@ -73,7 +73,7 @@ print(my_list)
 # Your solution for 24-palindrome_number:
 
 def is_palindrome(x):
- 
+
    if  str(x)== str(x)[::-1]:
        return True
    else: return False
@@ -138,7 +138,17 @@ print(f'fizz_buzz solution: \n > {fizz_buzz(n)} \n > = \n > {fizz_buzz_res}')
 # Your solution for 26-alphabetical here:
 
 def alphabetical(s):
-    pass
+    s = [*s]
+    s.sort()
+    output = ""
+    for x in s:
+        output += x
+    return output
+
+
+
+
+
 
 word = 'supercalifragilisticexpialicosious'
 print(f'alphabetical solution: \n > {alphabetical(word)} = aaaccceefgiiiiiiillloopprrsssstuux')
