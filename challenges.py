@@ -129,6 +129,7 @@ def fizz_buzz(n):
 
 n=15
 # print(fizz_buzz(15))
+
 # fizz_buzz_res=['1', '2', 'Fizz', '4', 'Buzz', 'Fizz', '7', '8', 'Fizz', 'Buzz', '11', 'Fizz', '13', '14', 'FizzBuzz']
 # print(f'fizz_buzz solution: \n > {fizz_buzz(n)} \n > = \n > {fizz_buzz_res}')
 
@@ -149,10 +150,18 @@ n=15
 
 # Your solution for 26-alphabetical here:
 
-def alphabetical(s): 
-    pass
+def alphabetical(s):
+    # new = ['z','a', 'b', 'c']
+    new = list(s)
+    new.sort()
+    return ''.join(new)
+    print(new)
+    
 
-# word = 'supercalifragilisticexpialicosious'
+# print(alphabetical('s'))
+word = 'supercalifragilisticexpialicosious'
+print(alphabetical('alpha'))
+print('a' < 'b')
 # print(f'alphabetical solution: \n > {alphabetical(word)} = aaaccceefgiiiiiiillloopprrsssstuux')
 
 #Challenge: 27-two_sum
