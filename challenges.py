@@ -64,7 +64,7 @@ print(f'sum_of_minimums solution: \n > {sum_of_minimums(my_list)} = 26')
 # Your solution for 24-palindrome_number:
 
 def is_palindrome(x):
-   pass
+    pass
 
 print(f'is_palindrome solution: \n > {is_palindrome(101)} = True \n > {is_palindrome(10)} = False')
 
@@ -109,7 +109,12 @@ print(f'fizz_buzz solution: \n > {fizz_buzz(n)} \n > = \n > {fizz_buzz_res}')
 # Your solution for 26-alphabetical here:
 
 def alphabetical(s): 
-    pass
+    list = []
+    for char in s:
+        list.append(char)
+    sorted_list = sorted(list)
+    s = ''.join(sorted_list)
+    return s
 
 word = 'supercalifragilisticexpialicosious'
 print(f'alphabetical solution: \n > {alphabetical(word)} = aaaccceefgiiiiiiillloopprrsssstuux')
