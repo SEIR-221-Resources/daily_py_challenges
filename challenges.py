@@ -67,24 +67,25 @@
 
 # Your solution for 24-palindrome_number:
 
-def is_palindrome(num):
-    reverse_num = str(num)[::-1]
-    if str(num) == reverse_num:
-        return True
-    else:
-        return False
+# def is_palindrome(num):
+#     reverse_num = str(num)[::-1]
+#     if str(num) == reverse_num:
+#         return True
+#     else:
+#         return False
 
-print(f'is_palindrome solution: \n > {is_palindrome(101)} = True \n > {is_palindrome(10)} = False')
+# print(f'is_palindrome solution: \n > {is_palindrome(101)} = True \n > {is_palindrome(10)} = False')
 
 #Challenge: 25-fizz_buzz
 #Difficulty:  Basic
 #Prompt:
 #- Write a function called fizz_buzz that, given an integer n, return a string array answer (1-indexed) where:
 
-#answer[i] == "FizzBuzz" if i is divisible by 3 and 5.
-#answer[i] == "Fizz" if i is divisible by 3.
-#answer[i] == "Buzz" if i is divisible by 5.
-#answer[i] == i (as a string) if none of the above conditions are true.
+
+# answer[i] == "FizzBuzz" if i is divisible by 3 and 5.
+# answer[i] == "Fizz" if i is divisible by 3.
+# answer[i] == "Buzz" if i is divisible by 5.
+# answer[i] == i (as a string) if none of the above conditions are true.
 
 #Example:
 #Input: n = 15
@@ -93,7 +94,17 @@ print(f'is_palindrome solution: \n > {is_palindrome(101)} = True \n > {is_palind
 # Your solution for 25-fizz_buzz:
 
 # def fizz_buzz(n):
-#     pass
+#     results = []
+#     for i in range(1, n + 1):
+#         if (i % 3 == 0) and (i % 5) == 0:
+#             results.append("FizzBuzz")
+#         elif (i % 3) == 0:
+#             results.append("Fizz")
+#         elif (i % 5) == 0:
+#             results.append("Buzz")
+#         else:
+#             results.append(str(i))
+#     return results
 
 # n=15
 # fizz_buzz_res=['1', '2', 'Fizz', '4', 'Buzz', 'Fizz', '7', '8', 'Fizz', 'Buzz', '11', 'Fizz', '13', '14', 'FizzBuzz']
@@ -116,11 +127,16 @@ print(f'is_palindrome solution: \n > {is_palindrome(101)} = True \n > {is_palind
 
 # Your solution for 26-alphabetical here:
 
-# def alphabetical(s): 
-#     pass
+def alphabetical(s): 
+    list = []
+    for char in s:
+        list.append(char)
+    sorted_list = sorted(list)
+    s = ''.join(sorted_list)
+    return s
 
-# word = 'supercalifragilisticexpialicosious'
-# print(f'alphabetical solution: \n > {alphabetical(word)} = aaaccceefgiiiiiiillloopprrsssstuux')
+word = 'supercalifragilisticexpialicosious'
+print(f'alphabetical solution: \n > {alphabetical(word)} = aaaccceefgiiiiiiillloopprrsssstuux')
 
 #Challenge: 27-two_sum
 #Difficulty:  Intermediate
