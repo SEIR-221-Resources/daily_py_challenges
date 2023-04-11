@@ -76,7 +76,7 @@ def sum_of_minimums(list):
                 return total
         
 
-print(sum_of_minimums(my_list))
+# print(sum_of_minimums(my_list))
 # print(f'sum_of_minimums solution: \n > {sum_of_minimums(my_list)} = 26')
 
 #Challenge: 24-palindrome_number
@@ -87,7 +87,13 @@ print(sum_of_minimums(my_list))
 # Your solution for 24-palindrome_number:
 
 def is_palindrome(x):
-   pass
+    x_array = list(str(x))
+    x_array_reverse = list(str(x))
+    x_array_reverse.reverse()
+    if x_array == x_array_reverse:
+        return True
+    return False
+   
 
 # print(f'is_palindrome solution: \n > {is_palindrome(101)} = True \n > {is_palindrome(10)} = False')
 
@@ -108,9 +114,21 @@ def is_palindrome(x):
 # Your solution for 25-fizz_buzz:
 
 def fizz_buzz(n):
-    pass
+    results = []
+    for i in range(1, n + 1):
+        if (i % 3 == 0) and (i % 5) == 0:
+                results.append("FizzBuzz")
+        elif (i % 3) == 0:
+                results.append("Fizz")
+        elif (i % 5) == 0:
+                results.append("Buzz")
+        else:
+                results.append(str(i))
+    return results
+    
 
-# n=15
+n=15
+# print(fizz_buzz(15))
 # fizz_buzz_res=['1', '2', 'Fizz', '4', 'Buzz', 'Fizz', '7', '8', 'Fizz', 'Buzz', '11', 'Fizz', '13', '14', 'FizzBuzz']
 # print(f'fizz_buzz solution: \n > {fizz_buzz(n)} \n > = \n > {fizz_buzz_res}')
 
