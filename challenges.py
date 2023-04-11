@@ -1,4 +1,4 @@
-#Challenge: 21-shortest_word
+#Challenge: 21-shortest_word SOLVED
 #Difficulty:  Intermediate
 #Prompt:
 #- Write a function called shortest_word that accepts a single string as argument.
@@ -25,7 +25,7 @@ def shortest_word(s):
 shortest_word_string="Hey I don't think that word means what you think it means"
 print(f'shortest_word solution: \n > {shortest_word(shortest_word_string)} = 1')
 
-#Challenge: 22-reverse_a_string
+#Challenge: 22-reverse_a_string SOLVED
 #Difficulty:  Intermediate
 #Prompt:
 #- Reverse a string manually. Don't use s[::-1] (even though that's awesome). Create a new variable storing an empty string and add the letters from the first string one by one. The for loop should iterate over the length of the string and you should access letters individually.
@@ -33,7 +33,7 @@ print(f'shortest_word solution: \n > {shortest_word(shortest_word_string)} = 1')
 #Hint:
 ## Python offers several ways to reverse a String. This is a classic thing that lots of people want to do. It's probably easy to look up this answer on Stack Overflow.
 
-# Your solution for 22-reverse_a_string here:
+# Your solution for 22-reverse_a_string here: 
 
 def reverse_a_string(s):
     new_string = ""
@@ -64,7 +64,7 @@ print(reverse_a_string("SEI Rocks!"))
 backwards_string="snaem ti kniht uoy tahw snaem drow taht kniht t'nod I"
 print(f'reverse_a_string solution: \n > {reverse_a_string(backwards_string)} = {shortest_word_string}')
 
-#Challenge: 23-sum_of_minimums
+#Challenge: 23-sum_of_minimums SOLVED
 #Difficulty:  Intermediate
 #Prompt:
 #- Write a function called sum_of_minimums that accepts a single list as an argument.
@@ -127,10 +127,21 @@ print(f'sum_of_minimums solution: \n > {sum_of_minimums(my_list)} = 26')
 
 # Your solution for 25-fizz_buzz:
 
-# def fizz_buzz(n):
-#     pass
+def fizz_buzz(n):
+    answer = []
+    for n in range(1, n+1):    
+        if n % 3 == 0 and n % 5 == 0:
+            answer.append('FizzBuzz')
+        elif n % 3 == 0:
+            answer.append('Fizz')
+        elif n % 5 == 0:
+            answer.append('Buzz')
+        else:
+            answer.append(str(n))
+    return answer
 
-# n=15
+n=15
+print(fizz_buzz(n))
 # fizz_buzz_res=['1', '2', 'Fizz', '4', 'Buzz', 'Fizz', '7', '8', 'Fizz', 'Buzz', '11', 'Fizz', '13', '14', 'FizzBuzz']
 # print(f'fizz_buzz solution: \n > {fizz_buzz(n)} \n > = \n > {fizz_buzz_res}')
 
