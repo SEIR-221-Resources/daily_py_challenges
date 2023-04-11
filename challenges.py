@@ -13,7 +13,7 @@ def shortest_word(s):
     min_word = min(phrase, key=len)
     return len(min_word)
 shortest_word_string="I don't think that word means what you think it means"
-print(f'shortest_word solution: \n > {shortest_word(shortest_word_string)} = 1')
+#print(f'shortest_word solution: \n > {shortest_word(shortest_word_string)} = 1')
 
 #Challenge: 22-reverse_a_string
 #Difficulty:  Intermediate
@@ -31,7 +31,7 @@ def reverse_a_string(s):
     return (new_string)
     
 backwards_string="snaem ti kniht uoy tahw snaem drow taht kniht t'nod I"
-print(f'reverse_a_string solution: \n > {reverse_a_string(backwards_string)} = {shortest_word_string}')
+#print(f'reverse_a_string solution: \n > {reverse_a_string(backwards_string)} = {shortest_word_string}')
     
 # #Challenge: 23-shortest_word
 # #Difficulty:  Intermediate
@@ -51,7 +51,7 @@ def sum_of_minimums(list):
     return sum(min_array)
 
 my_list = [ [1,2,3,4,5], [5,6,7,8,9], [20,21,34,56,100] ]
-print(f'sum_of_minimums solution: \n > {sum_of_minimums(my_list)} = 26')
+#print(f'sum_of_minimums solution: \n > {sum_of_minimums(my_list)} = 26')
 
 # #Challenge: 24-palindrome_number
 # #Difficulty:  Basic
@@ -60,10 +60,12 @@ print(f'sum_of_minimums solution: \n > {sum_of_minimums(my_list)} = 26')
 
 # # Your solution for 24-palindrome_number:
 
-# def is_palindrome(x):
-#    pass
+def is_palindrome(x):
+    if str(x) == str(x)[::-1]:
+            return True
+    return False
 
-# print(f'is_palindrome solution: \n > {is_palindrome(101)} = True \n > {is_palindrome(10)} = False')
+#print(f'is_palindrome solution: \n > {is_palindrome(101)} = True \n > {is_palindrome(10)} = False')
 
 # #Challenge: 25-fizz_buzz
 # #Difficulty:  Basic
@@ -81,8 +83,19 @@ print(f'sum_of_minimums solution: \n > {sum_of_minimums(my_list)} = 26')
 
 # # Your solution for 25-fizz_buzz:
 
-# def fizz_buzz(n):
-#     pass
+def fizz_buzz(n):
+    print("Hello world")
+    count = 1
+    my_range = range(1, n+1)
+    for count in my_range:
+        if (count % 3 == 0 and count % 5 != 0):
+            print("fizz")
+        elif (count % 3 != 0 and count % 5 == 0):
+            print("buzz")
+        elif (count % 3 == 0 and count % 5 == 0):
+            print("fizzbuzz")
+        else: print(count)
+#fizz_buzz(15)
 
 # n=15
 # fizz_buzz_res=['1', '2', 'Fizz', '4', 'Buzz', 'Fizz', '7', '8', 'Fizz', 'Buzz', '11', 'Fizz', '13', '14', 'FizzBuzz']
@@ -105,11 +118,16 @@ print(f'sum_of_minimums solution: \n > {sum_of_minimums(my_list)} = 26')
 
 # # Your solution for 26-alphabetical here:
 
-# def alphabetical(s): 
-#     pass
+def alphabetical(s): 
 
-# word = 'supercalifragilisticexpialicosious'
-# print(f'alphabetical solution: \n > {alphabetical(word)} = aaaccceefgiiiiiiillloopprrsssstuux')
+    word_list = list(word)
+    word_list.sort()
+    new_list = "".join(word_list)
+    return new_list
+
+word = 'supercalifragilisticexpialicosious'
+print(f'alphabetical solution: \n > {alphabetical(word)} = aaaccceefgiiiiiiillloopprrsssstuux')
+
 
 # #Challenge: 27-two_sum
 # #Difficulty:  Intermediate
