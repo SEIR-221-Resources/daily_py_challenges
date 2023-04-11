@@ -129,7 +129,12 @@ print(f'fizz_buzz solution: \n > {fizz_buzz(n)} \n > = \n > {fizz_buzz_res}')
 # Your solution for 26-alphabetical here:
 
 def alphabetical(s): 
-    pass
+    list = []
+    for char in s:
+        list.append(char)
+    sorted_list = sorted(list)
+    s = ''.join(sorted_list)
+    return s
 
 word = 'supercalifragilisticexpialicosious'
 print(f'alphabetical solution: \n > {alphabetical(word)} = aaaccceefgiiiiiiillloopprrsssstuux')
