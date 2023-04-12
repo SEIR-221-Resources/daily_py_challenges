@@ -111,7 +111,7 @@ print(f'sum_of_minimums solution: \n > {sum_of_minimums(my_list)} = 26')
 
 # print(f'is_palindrome solution: \n > {is_palindrome(101)} = True \n > {is_palindrome(10)} = False')
 
-#Challenge: 25-fizz_buzz
+#Challenge: 25-fizz_buzz SOLVED
 #Difficulty:  Basic
 #Prompt:
 #- Write a function called fizz_buzz that, given an integer n, return a string array answer (1-indexed) where:
@@ -125,7 +125,7 @@ print(f'sum_of_minimums solution: \n > {sum_of_minimums(my_list)} = 26')
 #Input: n = 15
 #Output: ["1","2","Fizz","4","Buzz","Fizz","7","8","Fizz","Buzz","11","Fizz","13","14","FizzBuzz"]
 
-# Your solution for 25-fizz_buzz: SOLVED
+# Your solution for 25-fizz_buzz: 
 
 def fizz_buzz(n):
     answer = []
@@ -145,7 +145,7 @@ print(fizz_buzz(n))
 # fizz_buzz_res=['1', '2', 'Fizz', '4', 'Buzz', 'Fizz', '7', '8', 'Fizz', 'Buzz', '11', 'Fizz', '13', '14', 'FizzBuzz']
 # print(f'fizz_buzz solution: \n > {fizz_buzz(n)} \n > = \n > {fizz_buzz_res}')
 
-#Challenge: 26-alphabetical
+#Challenge: 26-alphabetical SOLVED
 #Difficulty:  Intermediate
 #Prompt:
 #- Create a function that takes a string and returns the string with the letters in alphabetical order (ie. `hello` becomes `ehllo`), Assume numbers and punctuation symbols will not be included in the string.
@@ -190,12 +190,32 @@ print(f'alphabetical solution: \n > {alphabetical(word)} = aaaccceefgiiiiiiilllo
 # Your solution for 27-two_sum here:
 
 # def two_sum(nums, target): 
-#     pass
-                
-# nums=[2,7,11,15]
-# target=9
-# print(f'two_sum solution: \n > {two_sum(nums, target)} = [0, 1]')
+    # test = [3, 8, 21, 9, 15, 35, -1]
+    # test_target = 20
+    # print(nums)
+    # for i in nums:
+    #     current_num = nums[0]
+    #     sum_indices = []
+    #     while len(nums):
+    #         if current_num[i] + current_num+1 == target:
+    #             sum_indices.append(current_num, current_num+1)
+    #             return sum_indices
+    #         current_num += 1
+    #     # put current index and next index in line in array to add // if target is reached return sum_indices
+    # print(sum_indices)
+def two_sum(nums, target):
+    for i, num1 in enumerate(nums):
+        for j, num2 in enumerate(nums[1:]):
+            if num1 + num2 == target:
+                return [i, j+1]
+            
+nums=[2,7,11,15]
+target=9
+print(f'two_sum solution: \n > {two_sum(nums, target)} = [0, 1]')
 
+
+
+            
 #Challenge: 28-roman_to_integer
 #Difficulty:  Intermediate
 #Prompt:
