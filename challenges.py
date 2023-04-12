@@ -170,8 +170,10 @@ print(f'alphabetical solution: \n > {alphabetical(word)} = aaaccceefgiiiiiiilllo
 # Your solution for 27-two_sum here:
 
 def two_sum(nums, target):
-    pass
-
+     for idx, num in enumerate(nums):
+            difference = target - num
+            if difference in nums:
+                return [idx, nums.index(difference)]
 nums=[2,7,11,15]
 target=9
 print(f'two_sum solution: \n > {two_sum(nums, target)} = [0, 1]')
