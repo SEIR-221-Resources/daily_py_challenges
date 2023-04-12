@@ -125,7 +125,7 @@ print(f'sum_of_minimums solution: \n > {sum_of_minimums(my_list)} = 26')
 #Input: n = 15
 #Output: ["1","2","Fizz","4","Buzz","Fizz","7","8","Fizz","Buzz","11","Fizz","13","14","FizzBuzz"]
 
-# Your solution for 25-fizz_buzz:
+# Your solution for 25-fizz_buzz: SOLVED
 
 def fizz_buzz(n):
     answer = []
@@ -162,11 +162,16 @@ print(fizz_buzz(n))
 
 # Your solution for 26-alphabetical here:
 
-# def alphabetical(s): 
-#     pass
+def alphabetical(s): 
+    new = list(s)
+    new.sort()
+    return ''.join(new)
+# access each character
+    # print(new )
 
-# word = 'supercalifragilisticexpialicosious'
-# print(f'alphabetical solution: \n > {alphabetical(word)} = aaaccceefgiiiiiiillloopprrsssstuux')
+# print('a' < 'b')    
+word = 'supercalifragilisticexpialicosious'
+print(f'alphabetical solution: \n > {alphabetical(word)} = aaaccceefgiiiiiiillloopprrsssstuux')
 
 #Challenge: 27-two_sum
 #Difficulty:  Intermediate
