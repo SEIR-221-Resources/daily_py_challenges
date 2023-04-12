@@ -160,8 +160,9 @@ def alphabetical(s):
 
 # print(alphabetical('s'))
 word = 'supercalifragilisticexpialicosious'
-print(alphabetical('alpha'))
-print('a' < 'b')
+# print(alphabetical('alpha'))
+# print('a' < 'b')
+
 # print(f'alphabetical solution: \n > {alphabetical(word)} = aaaccceefgiiiiiiillloopprrsssstuux')
 
 #Challenge: 27-two_sum
@@ -181,9 +182,15 @@ print('a' < 'b')
 # Your solution for 27-two_sum here:
 
 def two_sum(nums, target): 
-    pass
-                
-# nums=[2,7,11,15]
+   for i in range(len(nums)):
+            for j in range(i+1,len(nums)):
+                if nums[i] + nums[j] == target:
+                    return [i,j]
+    
+               
+nums=[2,7,11,15]
+print(two_sum(nums,18))
+
 # target=9
 # print(f'two_sum solution: \n > {two_sum(nums, target)} = [0, 1]')
 
