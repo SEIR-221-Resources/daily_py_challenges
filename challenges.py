@@ -136,10 +136,17 @@ print(f'alphabetical solution: \n > {alphabetical(word)} = aaaccceefgiiiiiiilllo
 # Your solution for 27-two_sum here:
 
 def two_sum(nums, target): 
-    pass
+    for idx, num in enumerate(nums):
+        for j in range(len(nums)-1):
+            if idx == j:
+                continue
+            elif num + nums[j] == target:
+                return [idx, j]
+        
                 
-nums=[2,7,11,15]
-target=9
+nums=[5,5,11,15]
+# nums=[2, 7, 11, -2]
+target=10
 print(f'two_sum solution: \n > {two_sum(nums, target)} = [0, 1]')
 
 #Challenge: 28-roman_to_integer
