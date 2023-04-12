@@ -156,7 +156,12 @@ print(f'alphabetical solution: \n > {alphabetical(word)} = aaaccceefgiiiiiiilllo
 # Your solution for 27-two_sum here:
 
 def two_sum(nums, target): 
-    pass
+    for i in range(len(nums) - 1):
+        difference = target - nums[i]
+        if difference in nums:
+            idx = nums.index(difference)
+            if idx != i:
+                return [i, idx]
                 
 nums=[2,7,11,15]
 target=9
