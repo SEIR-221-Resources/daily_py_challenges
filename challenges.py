@@ -129,8 +129,11 @@ print(f'fizz_buzz solution: \n > {fizz_buzz(n)} \n > = \n > {fizz_buzz_res}')
 
 # Your solution for 26-alphabetical here:
 
-def alphabetical(s): 
-    pass
+def alphabetical(s):
+    new_list = [char for char in s]
+    new_list.sort()
+    return ''.join(new_list)
+
 
 word = 'supercalifragilisticexpialicosious'
 print(f'alphabetical solution: \n > {alphabetical(word)} = aaaccceefgiiiiiiillloopprrsssstuux')
@@ -152,9 +155,15 @@ print(f'alphabetical solution: \n > {alphabetical(word)} = aaaccceefgiiiiiiilllo
 # Your solution for 27-two_sum here:
 
 def two_sum(nums, target): 
-    pass
+    for idx, num in enumerate(nums):
+        difference = target - num
+        
+        if difference in nums:
+            return [idx, nums.index(difference)]
+        
+    
                 
-nums=[2,7,11,15]
+nums =[2,7,11,15]
 target=9
 print(f'two_sum solution: \n > {two_sum(nums, target)} = [0, 1]')
 
