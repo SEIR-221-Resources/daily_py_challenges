@@ -187,7 +187,46 @@ print(f'two_sum solution: \n > {two_sum(nums, target)} = [0, 1]')
 # Your solution for 28-roman_to_integer here:
 
 def roman_to_int(s):
-    pass
+    numerals = {
+        'I': 1,
+        'V': 5,
+        'X': 10,
+        'L': 50,
+        'C': 100,
+        'D': 500,
+        'M': 1000
+    }
+
+    subtractive = {
+        'IV': 4,
+        'IX': 9,
+        'XL': 40,
+        'XC': 90,
+        'CD': 400,
+        'CM': 900
+    }
+    
+    my_list = []
+
+    if not((s[len(s)-2] +s[len(s)-1]) in subtractive):
+        last_num = numerals[s[len(s)-1]]
+        my_list.append(last_num)
+    
+
+    for i in range(len(s) - 1):
+        combo = s[i] + s[i+1]
+        if (combo) in subtractive:
+            my_list.append(subtractive[combo])
+            s = s.replace(combo, '--')
+        elif s[i] in numerals:
+            my_list.append(numerals[s[i]])
+
+        print(my_list)
+
+
+        
+    return sum(my_list)
+
 		
 r='LVIII'
 print(f'roman_to_int solution: \n > {roman_to_int(r)} = 58')
