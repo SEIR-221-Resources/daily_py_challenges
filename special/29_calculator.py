@@ -20,4 +20,21 @@
 # what they typed in to a string.
 
 # Your solution for 29-calculator here:
+operation = input("What calculation would you like to do? (add, sub, mult, div) ").lower()
+first = int(input("What is number 1? "))
+second = int(input("What is number 2? "))
 
+if operation == 'add':
+    result = first + second
+elif operation == 'sub':
+    result = first - second
+elif operation == 'mult':
+    result = first * second
+elif operation == 'div':
+    result = first / second
+    if result.is_integer():
+        result = int(result)
+else: 
+    result = f"impossible to calculate because {operation} is not a valid operation."
+
+print(f"Your result is {result}")
