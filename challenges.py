@@ -154,12 +154,17 @@ print(f'alphabetical solution: \n > {alphabetical(word)} = aaaccceefgiiiiiiilllo
 
 # Your solution for 27-two_sum here:
 
-# def two_sum(nums, target): 
-#     pass
+def two_sum(nums, target): 
+    for idx, num in enumerate(nums):
+        for j in range(len(nums)-1):
+            if idx == j:
+                continue
+            elif num + nums[j] == target:
+                return [idx, j]
                 
-# nums=[2,7,11,15]
-# target=9
-# print(f'two_sum solution: \n > {two_sum(nums, target)} = [0, 1]')
+nums=[2,7,11,15]
+target=9
+print(f'two_sum solution: \n > {two_sum(nums, target)} = [0, 1]')
 
 #Challenge: 28-roman_to_integer
 #Difficulty:  Intermediate
@@ -180,8 +185,20 @@ print(f'alphabetical solution: \n > {alphabetical(word)} = aaaccceefgiiiiiiilllo
 
 # Your solution for 28-roman_to_integer here:
 
-# def roman_to_int(s):
-#     pass
-		
-# r='LVIII'
-# print(f'roman_to_int solution: \n > {roman_to_int(r)} = 58')
+def roman_to_int(s):
+    numerals = {'I':1,'V':5,'X':10,'L':50,'C':100,'D':500,'M':1000,'IV':4,'IX':9,'XL':40,'XC':90,'CD':400,'CM':900}
+    output = 0
+    i = 0
+    while i < len(s):
+        if i+1<len(s) and s[i:i+2]in numerals:
+            output+=numerals[s[i:i+2]]
+            i+=2
+            print(output)
+        else:
+            print(i)
+            output+= numerals[s[i]]
+            i+=1
+    return output
+    
+r='LVIII'
+print(f'roman_to_int solution: \n > {roman_to_int(r)} = 58')
