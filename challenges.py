@@ -213,8 +213,29 @@ print(two_sum(nums,18))
 
 # Your solution for 28-roman_to_integer here:
 
+
 def roman_to_int(s):
-    pass
+    output = 0
+    dictionary = {
+    
+    "I": 1,
+    "V": 5, 
+    "X": 10,
+    "L": 50,
+    "C": 100,
+    "D": 500, 
+    "M": 1000
+}
+    for idx in range(len(s)):
+        curr = s[idx]
+        next = s[idx+1] if idx+1 < len(s) else ""
+        if(dictionary[curr]<dictionary[next]):
+            output -= dictionary[curr]
+        else:
+            output += dictionary[curr] if curr in dictionary else 0
+    #for c in s:
+        #output += dictionary[c] if c in dictionary else 0
+    return output
 		
-# r='LVIII'
-# print(f'roman_to_int solution: \n > {roman_to_int(r)} = 58')
+r='LVIII'
+print(f'roman_to_int solution: \n > {roman_to_int(r)} = 58')
