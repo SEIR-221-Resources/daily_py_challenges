@@ -8,11 +8,18 @@
 
 # Your solution for 21-shortest_word here:
 
-def shortest_word(s): 
-    pass
+# def shortest_word(s): 
+#     list = s.spilt(' ')
+#     nums_list = []
+#     print('list:', list)
+#     for word in list:
+#         nums_list.append(len(word))
+#     return min(nums_list)
+#     print('nums_list:', nums_list)
+    
 
-shortest_word_string="I don't think that word means what you think it means"
-print(f'shortest_word solution: \n > {shortest_word(shortest_word_string)} = 1')
+# shortest_word_string="I don't think that word means what you think it means"
+# print(f'shortest_word solution: \n > {shortest_word(shortest_word_string)} = 1')
 
 #Challenge: 22-reverse_a_string
 #Difficulty:  Intermediate
@@ -24,11 +31,14 @@ print(f'shortest_word solution: \n > {shortest_word(shortest_word_string)} = 1')
 
 # Your solution for 22-reverse_a_string here:
 
-def reverse_a_string(s):
-    pass
+# def reverse_a_string(s):
+#     new_string = ''
+#     for i in range(len()-1, -1, -1):
+#         new_string += s[i]
+#     return new_string
     
-backwards_string="snaem ti kniht uoy tahw snaem drow taht kniht t'nod I"
-print(f'reverse_a_string solution: \n > {reverse_a_string(backwards_string)} = {shortest_word_string}')
+# backwards_string="snaem ti kniht uoy tahw snaem drow taht kniht t'nod I"
+# print(f'reverse_a_string solution: \n > {reverse_a_string(backwards_string)} = {shortest_word_string}')
 
 #Challenge: 23-shortest_word
 #Difficulty:  Intermediate
@@ -39,11 +49,11 @@ print(f'reverse_a_string solution: \n > {reverse_a_string(backwards_string)} = {
 
 # Your solution for 23-sum_of_minimums here:
 
-def sum_of_minimums(list):
-    pass
+# def sum_of_minimums(list):
+#     pass
 
-my_list = [ [1,2,3,4,5], [5,6,7,8,9], [20,21,34,56,100] ]
-print(f'sum_of_minimums solution: \n > {sum_of_minimums(my_list)} = 26')
+# my_list = [ [1,2,3,4,5], [5,6,7,8,9], [20,21,34,56,100] ]
+# print(f'sum_of_minimums solution: \n > {sum_of_minimums(my_list)} = 26')
 
 #Challenge: 24-palindrome_number
 #Difficulty:  Basic
@@ -53,7 +63,13 @@ print(f'sum_of_minimums solution: \n > {sum_of_minimums(my_list)} = 26')
 # Your solution for 24-palindrome_number:
 
 def is_palindrome(x):
-   pass
+   x_str = str(x)
+#  Is this string equal to the string in reverse [star:end:step]
+   if x_str == x_str[::-1]:
+       return True
+   else:
+       return False
+print(is_palindrome(10))   
 
 print(f'is_palindrome solution: \n > {is_palindrome(101)} = True \n > {is_palindrome(10)} = False')
 
@@ -73,12 +89,12 @@ print(f'is_palindrome solution: \n > {is_palindrome(101)} = True \n > {is_palind
 
 # Your solution for 25-fizz_buzz:
 
-def fizz_buzz(n):
-    pass
+# def fizz_buzz(n):
+#     pass
 
-n=15
-fizz_buzz_res=['1', '2', 'Fizz', '4', 'Buzz', 'Fizz', '7', '8', 'Fizz', 'Buzz', '11', 'Fizz', '13', '14', 'FizzBuzz']
-print(f'fizz_buzz solution: \n > {fizz_buzz(n)} \n > = \n > {fizz_buzz_res}')
+# n=15
+# fizz_buzz_res=['1', '2', 'Fizz', '4', 'Buzz', 'Fizz', '7', '8', 'Fizz', 'Buzz', '11', 'Fizz', '13', '14', 'FizzBuzz']
+# print(f'fizz_buzz solution: \n > {fizz_buzz(n)} \n > = \n > {fizz_buzz_res}')
 
 #Challenge: 26-alphabetical
 #Difficulty:  Intermediate
@@ -96,9 +112,23 @@ print(f'fizz_buzz solution: \n > {fizz_buzz(n)} \n > = \n > {fizz_buzz_res}')
 # Try to avoid looking up the exact answer and look at built in functions for lists and strings instead.
 
 # Your solution for 26-alphabetical here:
-
 def alphabetical(s): 
-    pass
+    list = []
+    for char in s:
+        list.append(char)
+    sorted_list = sorted(list)
+    s = ''.join(sorted_list)
+    return s
+
+
+word = 'supercalifragilisticexpialicosious'
+print(f'alphabetical solution: \n > {alphabetical(word)} = aaaccceefgiiiiiiillloopprrsssstuux')
+
+word_list = list(new_word.strip())
+
+print(new_word.strip)
+# def alphabetical(s): 
+#     pass
 
 word = 'supercalifragilisticexpialicosious'
 print(f'alphabetical solution: \n > {alphabetical(word)} = aaaccceefgiiiiiiillloopprrsssstuux')
@@ -119,12 +149,14 @@ print(f'alphabetical solution: \n > {alphabetical(word)} = aaaccceefgiiiiiiilllo
 
 # Your solution for 27-two_sum here:
 
-def two_sum(nums, target): 
-    pass
+
+
+# def two_sum(nums, target): 
+#     pass
                 
-nums=[2,7,11,15]
-target=9
-print(f'two_sum solution: \n > {two_sum(nums, target)} = [0, 1]')
+# nums=[2,7,11,15]
+# target=9
+# print(f'two_sum solution: \n > {two_sum(nums, target)} = [0, 1]')
 
 #Challenge: 28-roman_to_integer
 #Difficulty:  Intermediate
@@ -145,8 +177,8 @@ print(f'two_sum solution: \n > {two_sum(nums, target)} = [0, 1]')
 
 # Your solution for 28-roman_to_integer here:
 
-def roman_to_int(s):
-    pass
+# def roman_to_int(s):
+#     pass
 		
-r='LVIII'
-print(f'roman_to_int solution: \n > {roman_to_int(r)} = 58')
+# r='LVIII'
+# print(f'roman_to_int solution: \n > {roman_to_int(r)} = 58')
