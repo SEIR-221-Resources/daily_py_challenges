@@ -21,3 +21,22 @@
 
 # Your solution for 29-calculator here:
 
+math_operation = input("What calculation would you like to do? (add, sub, mult, div): ")
+num1 = int(input("What is number 1?: "))
+num2 = int(input("What is number 2?: "))
+
+
+if math_operation =='add':
+    add = num1 + num2
+    print(add)
+elif math_operation == "sub":
+    sub = num1 - num2
+    print(sub)
+elif math_operation == "mult":
+    mult = num1 * num2
+    print(mult)
+elif math_operation == "div":
+    div = num1 /num2
+    print(div)
+else:
+    print("invalid input")
