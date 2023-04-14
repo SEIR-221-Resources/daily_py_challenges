@@ -8,11 +8,24 @@
 
 # Your solution for 21-shortest_word here:
 
-def shortest_word(s): 
-    pass
+def shortest_word(s):
+    shorty = 100
+
+    for word in s.split(" "):
+        if len(word) < shorty:
+            shorty = len(word)
+            
+    return shorty
+
+
 
 shortest_word_string="I don't think that word means what you think it means"
 print(f'shortest_word solution: \n > {shortest_word(shortest_word_string)} = 1')
+
+
+
+
+
 
 #Challenge: 22-reverse_a_string
 #Difficulty:  Intermediate
@@ -24,8 +37,24 @@ print(f'shortest_word solution: \n > {shortest_word(shortest_word_string)} = 1')
 
 # Your solution for 22-reverse_a_string here:
 
+# def reverse_a_string(s):
+#     new_list = list(s)
+#     new_list.reverse()
+#     return ''.join(new_list)
+
+
 def reverse_a_string(s):
-    pass
+    new_list = list(s)
+    
+    def helper(list1):
+        if len(list1) == 0: return ""
+        
+        return list1.pop() + helper(list1)
+
+    return helper(new_list)
+    
+
+
     
 backwards_string="snaem ti kniht uoy tahw snaem drow taht kniht t'nod I"
 print(f'reverse_a_string solution: \n > {reverse_a_string(backwards_string)} = {shortest_word_string}')
@@ -39,8 +68,11 @@ print(f'reverse_a_string solution: \n > {reverse_a_string(backwards_string)} = {
 
 # Your solution for 23-sum_of_minimums here:
 
-def sum_of_minimums(list):
-    pass
+def sum_of_minimums(list, total = 0):
+    for i in list:
+        total += min(i)
+
+    return total
 
 my_list = [ [1,2,3,4,5], [5,6,7,8,9], [20,21,34,56,100] ]
 print(f'sum_of_minimums solution: \n > {sum_of_minimums(my_list)} = 26')
@@ -53,7 +85,7 @@ print(f'sum_of_minimums solution: \n > {sum_of_minimums(my_list)} = 26')
 # Your solution for 24-palindrome_number:
 
 def is_palindrome(x):
-   pass
+    return True if str(x) == str(x)[::-1] else False
 
 print(f'is_palindrome solution: \n > {is_palindrome(101)} = True \n > {is_palindrome(10)} = False')
 
@@ -97,8 +129,11 @@ print(f'fizz_buzz solution: \n > {fizz_buzz(n)} \n > = \n > {fizz_buzz_res}')
 
 # Your solution for 26-alphabetical here:
 
-def alphabetical(s): 
-    pass
+def alphabetical(s):
+    new_list = [char for char in s]
+    new_list.sort()
+    return ''.join(new_list)
+
 
 word = 'supercalifragilisticexpialicosious'
 print(f'alphabetical solution: \n > {alphabetical(word)} = aaaccceefgiiiiiiillloopprrsssstuux')
@@ -120,9 +155,15 @@ print(f'alphabetical solution: \n > {alphabetical(word)} = aaaccceefgiiiiiiilllo
 # Your solution for 27-two_sum here:
 
 def two_sum(nums, target): 
-    pass
+    for idx, num in enumerate(nums):
+        difference = target - num
+        
+        if difference in nums:
+            return [idx, nums.index(difference)]
+        
+    
                 
-nums=[2,7,11,15]
+nums =[2,7,11,15]
 target=9
 print(f'two_sum solution: \n > {two_sum(nums, target)} = [0, 1]')
 
@@ -146,7 +187,46 @@ print(f'two_sum solution: \n > {two_sum(nums, target)} = [0, 1]')
 # Your solution for 28-roman_to_integer here:
 
 def roman_to_int(s):
-    pass
+    numerals = {
+        'I': 1,
+        'V': 5,
+        'X': 10,
+        'L': 50,
+        'C': 100,
+        'D': 500,
+        'M': 1000
+    }
+
+    subtractive = {
+        'IV': 4,
+        'IX': 9,
+        'XL': 40,
+        'XC': 90,
+        'CD': 400,
+        'CM': 900
+    }
+    
+    my_list = []
+
+    if not((s[len(s)-2] +s[len(s)-1]) in subtractive):
+        last_num = numerals[s[len(s)-1]]
+        my_list.append(last_num)
+    
+
+    for i in range(len(s) - 1):
+        combo = s[i] + s[i+1]
+        if (combo) in subtractive:
+            my_list.append(subtractive[combo])
+            s = s.replace(combo, '--')
+        elif s[i] in numerals:
+            my_list.append(numerals[s[i]])
+
+        print(my_list)
+
+
+        
+    return sum(my_list)
+
 		
 r='LVIII'
 print(f'roman_to_int solution: \n > {roman_to_int(r)} = 58')
