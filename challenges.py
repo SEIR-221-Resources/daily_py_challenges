@@ -200,15 +200,20 @@ print(f'two_sum solution: \n > {two_sum(nums, target)}')
 # Your solution for 28-roman_to_integer here:
 
 def roman_to_int(s):
-    roman_numerals = { 'I' : 1, 'V' : 5, 'X' : 10, 'L' : 50, 'C' : 100, 'D' : 500, 'M' : 1000}
+    roman_numerals = { 'I' : 1, 'V' : 5, 'X' : 10, 'L' : 50, 'C' : 100, 'D' : 500, 'M' : 1000 }
     nums = []
 
     sList = list(s)
     for num in sList:
         nums.append(roman_numerals[num])
-    
+
+    for idx, num in enumerate(nums):
+        if idx > 0 and nums[idx-1] < nums[idx]:
+            nums[idx-1] = -nums[idx-1]
+
+
     return sum(nums)
 
 		
-r='LVIII'
+r='MMMCMXIX'
 print(f'roman_to_int solution for {r}: \n > {roman_to_int(r)} ')
