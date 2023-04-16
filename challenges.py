@@ -70,8 +70,6 @@ def is_palindrome(x):
         rev_str += int_str[i]
     return True if rev_str == int_str else False
 
-print('Palindrom', is_palindrome(101))
-
 print(f'is_palindrome solution: \n > {is_palindrome(101)} = True \n > {is_palindrome(10)} = False')
 
 #Challenge: 25-fizz_buzz
@@ -94,7 +92,7 @@ def fizz_buzz(n):
     fb_list = []
     for i in range(1, n + 1):
         if i % 3 == 0 and i % 5 == 0:
-            fb_list.append('Fizzbuzz')
+            fb_list.append('FizzBuzz')
         elif i % 3 == 0:
             fb_list.append('Fizz')
         elif i % 5 == 0:
@@ -186,7 +184,19 @@ print(f'two_sum solution: \n > {two_sum(nums, target)} = [0, 1]')
 # Your solution for 28-roman_to_integer here:
 
 def roman_to_int(s):
-    pass
+    num = 0
+    rom_nums = {
+        'I': 1,
+        'V': 5,
+        'X': 10,
+        'L': 50,
+        'C': 100,
+        'D': 500,
+        'M': 1000
+    }
+    for char in s:
+        num += rom_nums[char]
+    return num
 		
 r='LVIII'
 print(f'roman_to_int solution: \n > {roman_to_int(r)} = 58')
