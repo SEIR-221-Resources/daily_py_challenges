@@ -9,7 +9,11 @@
 # Your solution for 21-shortest_word here:
 
 def shortest_word(s): 
-    pass
+    list = s.split(' ')
+    nums_list = []
+    for word in list:
+        nums_list.append(len(word))
+    return min(nums_list)
 
 shortest_word_string="I don't think that word means what you think it means"
 print(f'shortest_word solution: \n > {shortest_word(shortest_word_string)} = 1')
@@ -25,12 +29,15 @@ print(f'shortest_word solution: \n > {shortest_word(shortest_word_string)} = 1')
 # Your solution for 22-reverse_a_string here:
 
 def reverse_a_string(s):
-    pass
+    new_string = ''
+    for i in range(len(s)-1, -1, -1):
+        new_string += s[i]
+    return new_string
     
 backwards_string="snaem ti kniht uoy tahw snaem drow taht kniht t'nod I"
 print(f'reverse_a_string solution: \n > {reverse_a_string(backwards_string)} = {shortest_word_string}')
 
-#Challenge: 23-shortest_word
+#Challenge: 23-sum_of_minimums
 #Difficulty:  Intermediate
 #Prompt:
 #- Write a function called sum_of_minimums that accepts a single list as an argument.
@@ -40,7 +47,11 @@ print(f'reverse_a_string solution: \n > {reverse_a_string(backwards_string)} = {
 # Your solution for 23-sum_of_minimums here:
 
 def sum_of_minimums(list):
-    pass
+    min_list = []
+    for sublist in list:
+        min_list.append(min(sublist))
+    return sum(min_list)
+        
 
 my_list = [ [1,2,3,4,5], [5,6,7,8,9], [20,21,34,56,100] ]
 print(f'sum_of_minimums solution: \n > {sum_of_minimums(my_list)} = 26')
@@ -53,7 +64,11 @@ print(f'sum_of_minimums solution: \n > {sum_of_minimums(my_list)} = 26')
 # Your solution for 24-palindrome_number:
 
 def is_palindrome(x):
-   pass
+    int_str = str(x)
+    rev_str = ''
+    for i in range(len(int_str)-1, -1, -1):
+        rev_str += int_str[i]
+    return True if rev_str == int_str else False
 
 print(f'is_palindrome solution: \n > {is_palindrome(101)} = True \n > {is_palindrome(10)} = False')
 
@@ -74,7 +89,18 @@ print(f'is_palindrome solution: \n > {is_palindrome(101)} = True \n > {is_palind
 # Your solution for 25-fizz_buzz:
 
 def fizz_buzz(n):
-    pass
+    fb_list = []
+    for i in range(1, n + 1):
+        if i % 3 == 0 and i % 5 == 0:
+            fb_list.append('FizzBuzz')
+        elif i % 3 == 0:
+            fb_list.append('Fizz')
+        elif i % 5 == 0:
+            fb_list.append('Buzz')
+        else:
+            fb_list.append(str(i))
+    return fb_list
+    
 
 n=15
 fizz_buzz_res=['1', '2', 'Fizz', '4', 'Buzz', 'Fizz', '7', '8', 'Fizz', 'Buzz', '11', 'Fizz', '13', '14', 'FizzBuzz']
@@ -98,7 +124,12 @@ print(f'fizz_buzz solution: \n > {fizz_buzz(n)} \n > = \n > {fizz_buzz_res}')
 # Your solution for 26-alphabetical here:
 
 def alphabetical(s): 
-    pass
+    list = []
+    for char in s:
+        list.append(char)
+    sorted_list = sorted(list)
+    s = ''.join(sorted_list)
+    return s
 
 word = 'supercalifragilisticexpialicosious'
 print(f'alphabetical solution: \n > {alphabetical(word)} = aaaccceefgiiiiiiillloopprrsssstuux')
@@ -120,10 +151,17 @@ print(f'alphabetical solution: \n > {alphabetical(word)} = aaaccceefgiiiiiiilllo
 # Your solution for 27-two_sum here:
 
 def two_sum(nums, target): 
-    pass
+    for idx, num in enumerate(nums):
+        for j in range(len(nums)-1):
+            if idx == j:
+                continue
+            elif num + nums[j] == target:
+                return [idx, j]
+        
                 
-nums=[2,7,11,15]
-target=9
+nums=[5,5,11,15]
+# nums=[2, 7, 11, -2]
+target=10
 print(f'two_sum solution: \n > {two_sum(nums, target)} = [0, 1]')
 
 #Challenge: 28-roman_to_integer
@@ -146,7 +184,19 @@ print(f'two_sum solution: \n > {two_sum(nums, target)} = [0, 1]')
 # Your solution for 28-roman_to_integer here:
 
 def roman_to_int(s):
-    pass
+    num = 0
+    rom_nums = {
+        'I': 1,
+        'V': 5,
+        'X': 10,
+        'L': 50,
+        'C': 100,
+        'D': 500,
+        'M': 1000
+    }
+    for char in s:
+        num += rom_nums[char]
+    return num
 		
 r='LVIII'
 print(f'roman_to_int solution: \n > {roman_to_int(r)} = 58')
