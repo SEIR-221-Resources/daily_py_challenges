@@ -26,3 +26,33 @@
 #```
 
 # Your solution for 30-bank_transactions here:
+def bank_transaction():
+    amt = 0
+    option = 'no'
+    while option.lower() != 'yes':
+        curr_balance = 10000
+        option = input('What would you like to do? (deposit, withdraw, check_balance\n')
+
+        if option == 'deposit':
+            amt = int(input('How much would you like to deposit?\n'))
+            curr_balance += int(amt)
+            print(f"Your new balance is {curr_balance}\n")
+
+            
+        elif option == 'withdraw':
+            amt = int(input('How much would you like to withdraw?\n'))
+            curr_balance -= int(amt)
+            print(f"Your new balance is {curr_balance}\n")
+
+        elif option == 'check_balance':
+            print(f"Your current balance is {curr_balance}\n")
+
+        else:
+            print("Please try again.\n")
+
+
+        option = input("Are you finished? yes or no \n")
+
+    print("Have a great day!!")
+
+bank_transaction()
