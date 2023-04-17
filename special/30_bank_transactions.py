@@ -27,19 +27,33 @@
 
 # Your solution for 30-bank_transactions here:
 print("Welcome to Niks bank, remember we charge a button pressing fee everytime you use this application")
+# What are things that we might need?
+# Make a balance to start with
+# What else needs to happen?
+balance = int(input('Here at Niks bank we let you pick how rich you are, please input your starting balance > '))
+# prompting the user for the next hting to do
+# making the display lowercase (if it wasn't)
 
-balance = int(input("At Niks bank we let you decide how rich you are, please let us know your balance: $  "))
-display = input("What would you like to do? (deposit, withdraw, check_balance): ")
+# A condition to loop
+should_run = True
 
-if display == "check_balance":
-    print(f'your balance is {balance}')
-elif display == "deposit":
-    deposit = int(input("How much would you like to deposit?:$ "))
-    new_amount = deposit + balance
-    print(f'after your deposit of {deposit} your account has a balance of {new_amount}')
-elif display == "withdraw":
-    withdraw = int(input("How much would you like to withdraw?:$ "))
-    new_amount = balance - withdraw
-    print(f'after your deposit of {withdraw} your account has a balance of {new_amount}')
-else:
-   print("goodbye!")
+while should_run:
+
+    display = input('What would you like to do? withdraw, deposit, check_balance? ')
+    display.lower()
+    if display == "deposit":
+        deposit = int(input("How much would you like to deposit? "))
+        balance += deposit
+        print(f'Your new balance is... {balance} ')
+    elif display == "withdraw":
+        withdraw = int(input("How much would you like to withdraw? "))
+        balance -= withdraw
+        print(f'Your new balance is... {balance} ')
+    else:
+        print(f'The balance is {balance}')
+
+    print("are you done yet?")
+    done = input("Y/n ")
+    if done == "y":
+        print("Bye")
+        should_run = False
