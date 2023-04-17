@@ -26,3 +26,32 @@
 #```
 
 # Your solution for 30-bank_transactions here:
+
+print("Hello! Welcome to Ciaran's bank.")
+
+should_run = True
+balance = 1000000
+
+while should_run:
+    print("What can I help you with? (deposit, withdraw, check_balance)")
+    prompt = '> '
+    action = input(prompt)
+
+    if action == "deposit":
+        print("Please enter an amount")
+        amount = int(input(prompt))
+        balance += amount
+    elif action == "withdraw":
+        print("Please enter an amount")
+        amount = int(input(prompt))
+        balance -= amount
+    elif action == "check_balance":
+        print(f"Your current account balance is : {balance}")
+    else:
+        print("invalid input")
+
+    print("Are you done? ('y/n')")
+    done = input(prompt)
+    if done == "y":
+        print("Have a nice day!")
+        should_run = False

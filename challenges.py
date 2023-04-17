@@ -152,7 +152,7 @@ def two_sum(nums, target):
                 
 nums=[2,7,11,15]
 target=9
-print(f'two_sum solution: \n > {two_sum(nums, target)} = [0, 1]')
+#print(f'two_sum solution: \n > {two_sum(nums, target)} = [0, 1]')
 
 # def two_sum(nums, target): 
 #     pass
@@ -180,8 +180,37 @@ print(f'two_sum solution: \n > {two_sum(nums, target)} = [0, 1]')
 
 # # Your solution for 28-roman_to_integer here:
 
-# def roman_to_int(s):
-#     pass
-		
-# r='LVIII'
-# print(f'roman_to_int solution: \n > {roman_to_int(r)} = 58')
+def roman_to_int(s):
+    numerals = {
+            "I": 1,
+            "V": 5, 
+            "X": 10,
+            "L": 50,
+            "C": 100,
+            "D": 500, 
+            "M": 1000
+        }
+    score = 0
+    value = 0
+    for letter in s[::-1]:
+            preValue = value
+            value = numerals.get(letter)
+            if value <= preValue:
+                if (preValue == value * 5 or preValue == value * 10):
+                    score -= value
+                else:
+                    score += value
+            else:
+                score += value
+    return score 
+
+
+# assign a value to each letter
+# split input
+# cycle through input		
+# add them together
+
+
+
+r='VLIII'
+print(f'roman_to_int solution: \n > {roman_to_int(r)} = 58')

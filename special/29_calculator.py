@@ -21,3 +21,24 @@
 
 # Your solution for 29-calculator here:
 
+prompt = '> '
+print("Enter a type of math: add, sub, mult, div")
+math = input(prompt)
+
+print("Enter the first number")
+num_one = int(input(prompt))
+print("Enter the second number")
+num_two = int(input(prompt))
+
+print(f"input user data: math {math}, num 1 {num_one}, num 2 {num_two}")
+
+operations = {
+    "add": num_one + num_two,
+    "sub": num_one - num_two,
+    "mult": num_one * num_two,
+    "div": num_one * num_two
+}
+
+if math in operations:
+    print(f"result {operations[math]}")
+else:{f"{math} is not a valid math"}
