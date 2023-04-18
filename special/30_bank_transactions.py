@@ -26,3 +26,22 @@
 #```
 
 # Your solution for 30-bank_transactions here:
+
+balance = 0
+status = 'no'
+while status == 'no':
+    action = input('What would you like to do? (deposit, withdraw, check_balance)\n').lower()
+    if action == 'deposit':
+        amount = input('How much would you like to deposit?\n')
+        amount = int(amount)
+        balance += amount
+    elif action == 'withdraw':
+        amount = input('How much would you like to withdraw?\n')
+        amount = int(amount)
+        balance -= amount
+    elif action == 'check_balance':
+        pass
+    else:
+        print('Invalid Option!')
+    print(f'Your current balance is ${balance}')
+    status = input('Are you done?\n').lower()
