@@ -1,3 +1,5 @@
+
+
 # #Challenge: 21-shortest_word
 # #Difficulty:  Intermediate
 # #Prompt:
@@ -17,14 +19,8 @@ def shortest_word(s):
 
     return min(word_length)
 
-
-
-   
-
-test_string = "one two three x" #should return 3
-
 shortest_word_string="I don't think that word means what you think it means"
-print(f'shortest_word solution: \n > {shortest_word(test_string)}')
+print(f'shortest_word solution: \n > {shortest_word(shortest_word_string)}')
 
 
 
@@ -38,31 +34,25 @@ print(f'shortest_word solution: \n > {shortest_word(test_string)}')
 
 # # Your solution for 22-reverse_a_string here:
 
-test_string = 'twinkle twinkle little star'
-new_string = ''
+def reverse_a_string(string):
+    
+    new_string = ''
 
-new_string_array = list(reversed(test_string))
+    new_string_array = list(reversed(string))
 
-for character in new_string_array:
-    new_string += character
-print(new_string)
+    for character in new_string_array:
+        new_string += character
+    return new_string
 
 # # list(test_string)
 # for character in list(reversed(test_string)):
-#     char = new_string_array.pop()
+#     char = new_string_array.pop() 
 #     new_string += char
 
 # print(new_string)
 
-
-
-
-
-# def reverse_a_string(s):
-#     pass
-    
-# backwards_string="snaem ti kniht uoy tahw snaem drow taht kniht t'nod I"
-# print(f'reverse_a_string solution: \n > {reverse_a_string(backwards_string)} = {shortest_word_string}')
+backwards_string="snaem ti kniht uoy tahw snaem drow taht kniht t'nod I"
+print(f'reverse_a_string solution: \n > {reverse_a_string(backwards_string)} = {shortest_word_string}')
 
 # #Challenge: 23-shortest_word
 # #Difficulty:  Intermediate
@@ -73,11 +63,34 @@ print(new_string)
 
 # # Your solution for 23-sum_of_minimums here:
 
-# def sum_of_minimums(list):
-#     pass
 
-# my_list = [ [1,2,3,4,5], [5,6,7,8,9], [20,21,34,56,100] ]
-# print(f'sum_of_minimums solution: \n > {sum_of_minimums(my_list)} = 26')
+#NOTE: here
+
+def sum_of_minimums(list):
+    check = list[0]
+    
+    
+    pivot = list[-1]
+    left = [num for num in list[:-1] if num <= pivot]
+    right = [num for num in list[:-1] if num > pivot]
+    if left == []:
+        lowest_2 = pivot + right[0]
+        
+        return lowest_2
+    elif len(left) == 1:
+        lowest_2 = left[0] + pivot
+        
+        return lowest_2
+    else:
+        return sum_of_minimums(left)
+
+
+# print(sum_of_minimums([1, 3, 3, 4, 5, 0, 7, 24, ]))
+
+    
+
+my_list = [ [1,2,3,4,5], [5,6,7,8,9], [20,21,34,56,100] ]
+print(f'sum_of_minimums solution: \n > {sum_of_minimums(my_list)} = 26')
 
 # #Challenge: 24-palindrome_number
 # #Difficulty:  Basic
@@ -86,10 +99,17 @@ print(new_string)
 
 # # Your solution for 24-palindrome_number:
 
-# def is_palindrome(x):
-#    pass
+def palindrome_number(num):
+    mun = list(str(num))
+    mun.reverse()
+    number = int(''.join(mun))
+    if num == number:
+        return True
+    else:
+        return False
 
-# print(f'is_palindrome solution: \n > {is_palindrome(101)} = True \n > {is_palindrome(10)} = False')
+
+print(f'is_palindrome solution: \n > {palindrome_number(101)} = True \n > {palindrome_number(10)} = False')
 
 # #Challenge: 25-fizz_buzz
 # #Difficulty:  Basic
@@ -107,12 +127,21 @@ print(new_string)
 
 # # Your solution for 25-fizz_buzz:
 
-# def fizz_buzz(n):
-#     pass
+def fizz_buzz(n):
+    for number in range(n+1):
+        if n%3 == 0 and n%5 == 0:
+            return('Fizzbuzz')
+        elif n%3 == 0:
+            return('Fizz')
+        elif n%5 == 0:
+            return('Buzz')
+        else:
+            return(n)
 
-# n=15
-# fizz_buzz_res=['1', '2', 'Fizz', '4', 'Buzz', 'Fizz', '7', '8', 'Fizz', 'Buzz', '11', 'Fizz', '13', '14', 'FizzBuzz']
-# print(f'fizz_buzz solution: \n > {fizz_buzz(n)} \n > = \n > {fizz_buzz_res}')
+
+n=15
+fizz_buzz_res=['1', '2', 'Fizz', '4', 'Buzz', 'Fizz', '7', '8', 'Fizz', 'Buzz', '11', 'Fizz', '13', '14', 'FizzBuzz']
+print(f'fizz_buzz solution: \n > {fizz_buzz(n)} \n > = \n > {fizz_buzz_res}')
 
 # #Challenge: 26-alphabetical
 # #Difficulty:  Intermediate
@@ -131,11 +160,21 @@ print(new_string)
 
 # # Your solution for 26-alphabetical here:
 
-# def alphabetical(s): 
-#     pass
+def alphabetical(s): 
+    chars = list(s)
+    def chars_sort_key(c):
+        # ord() returns a unicode value for the character
+        return ord(c)
+    sorted_chars = sorted(chars, key=chars_sort_key)
+    
+    joined = ''.join(sorted_chars)
+    return joined
+    # for char in list:
 
-# word = 'supercalifragilisticexpialicosious'
-# print(f'alphabetical solution: \n > {alphabetical(word)} = aaaccceefgiiiiiiillloopprrsssstuux')
+
+
+word = 'supercalifragilisticexpialicosious'
+print(f'alphabetical solution: \n > {alphabetical(word)} = aaaccceefgiiiiiiillloopprrsssstuux')
 
 # #Challenge: 27-two_sum
 # #Difficulty:  Intermediate
@@ -153,12 +192,34 @@ print(new_string)
 
 # # Your solution for 27-two_sum here:
 
-# def two_sum(nums, target): 
-#     pass
+# #NOTE: here
+
+def two_sum(nums, target):
+    return 'didnt finish'
+    # for index, num in enumerate(nums):
+        
+        # accumulator = 0
+        # recurse = True
+        # def func(acc, check_recurse):
+        #     if nums[index] + nums[acc] == target:
+        #         list = [index, acc]
+        #         global recurse
+        #         global accumulator
+        #         accumulator = 1
+        #         recurse = False
+        #         return list
+        #     else:
+        #         acc +=1
+        #     while check_recurse == True:
+        #         func(acc, check_recurse)
+        # func(accumulator, recurse)
+
+    # Will return an array of index values 
+    
                 
-# nums=[2,7,11,15]
-# target=9
-# print(f'two_sum solution: \n > {two_sum(nums, target)} = [0, 1]')
+nums=[2,7,11,15]
+target=9
+print(f'two_sum solution: \n > {two_sum(nums, target)} = [0, 1]')
 
 # #Challenge: 28-roman_to_integer
 # #Difficulty:  Intermediate
@@ -179,8 +240,33 @@ print(new_string)
 
 # # Your solution for 28-roman_to_integer here:
 
-# def roman_to_int(s):
-#     pass
+# logic:
+    # if index is not next to an I, you just read the number
+    # if it is next to an I, then:
+        # figure out how many Is are before or after the number, cache those
+        # 
+
+def roman_to_int(s):
+    i = 1
+    v = 5
+    x = 10
+    l = 50
+    cache = []
+    for char in s:
+        char = char.lower()
+        if char == 'i':
+            cache.append(i)
+        elif char == 'v':
+            cache.append(v)
+        elif char == 'x':
+            cache.append(x)
+        elif char == 'l':
+            cache.append(l)
+    answer = sum(cache)
+    print(f'answer: {answer}')
+    return answer
+
+# print(roman_to_ind('LVIII'))
 		
-# r='LVIII'
-# print(f'roman_to_int solution: \n > {roman_to_int(r)} = 58')
+r='LVIII'
+print(f'roman_to_int solution: \n > {roman_to_int(r)} = 58')
