@@ -26,3 +26,30 @@
 #```
 
 # Your solution for 30-bank_transactions here:
+balance = 3
+def bank_transaction():
+    global balance
+    prompt = input(f'What would you like to do? (deposit, withdraw, check_balance) \n')
+    prompt.lower()
+
+    if prompt == 'deposit':
+        depositPrompt = input(f'How much would you like to deposit? \n')
+        depositAmount = int(depositPrompt)
+        balance += depositAmount
+        print(f'Your new balance is {balance}')
+    if prompt == 'withdraw':
+        withdrawResponse = input(f'How much would you like to withdraw? \n')
+        withdrawAmount = int(withdrawResponse)
+        balance -= withdrawAmount
+        print(f'Your new balance is {balance} \n')
+    if prompt == 'check_balance':
+        print(f'Your balance is {balance}\n')
+    
+
+    prompt_leave = input(f'Would you like to perform another transaction? y/n \n')
+    if prompt_leave.lower() == 'y':
+        
+        bank_transaction()
+    
+
+bank_transaction()
