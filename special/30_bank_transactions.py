@@ -26,3 +26,36 @@
 #```
 
 # Your solution for 30-bank_transactions here:
+
+def deposit(dep, bal):
+    bal += dep
+    print("your current balance is \n" + bal)
+def withdraw(amt, bal):
+     bal -= amt
+     print("your current balance is \n" + bal)
+def check_balance(bal):
+    print("Your current balance is \n"+ bal)
+
+def bank():
+    bal = 4000
+    isDone = 'no'
+
+    check_balance(bal)
+
+    while(isDone == 'no'):
+        option = input("What would you like to do? (deposit, withdraw, check_balance)").lower()
+        if(option == "deposit"):
+            dep = input("How much would you like to deposit?")
+            withdraw(int(dep), bal)
+        elif(option == "withdraw"):
+            amt = input("How much would you like to deposit?")
+            withdraw(int(amt), bal)
+        else:
+            check_balance(bal)
+        
+        isDone = input("Are you done?(yes/no)").lower()
+    
+
+bank()
+
+

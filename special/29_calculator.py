@@ -21,3 +21,19 @@
 
 # Your solution for 29-calculator here:
 
+def calculator():
+    opr = input("What calculation would you like to do? (add, sub, mult, div) ")
+    num1 = int(input("What is number 1?"))
+    num2 = int(input("What is number 2?"))
+    if(opr == 'add'):
+        print(f'Your result is {num1+num2}')
+    elif(opr == 'sub'):
+        print(f'Your result is {num1-num2}')
+    elif(opr == 'mult'):
+        print(f'Your result is {num1*num2}')
+    elif(opr == 'div'):
+        print(f'Your result is {num1/num2}')
+    else:
+        print("You entered the wrong calculation.")
+        
+calculator()
